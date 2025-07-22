@@ -1,0 +1,324 @@
+/* Base responsive styles for Rating component */
+
+/* Container responsive padding */
+.rating-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem; /* space between overall and bars */
+  flex-wrap: nowrap;
+}
+
+/* Small devices (576px and up) */
+@media (min-width: 576px) {
+  .rating-container {
+    padding: 20px;
+  }
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) {
+  .rating-container {
+    padding: 32px;
+  }
+  
+  /* Rating distribution adjustments */
+  .rating-distribution {
+    padding-left: 48px;
+  }
+  
+  /* Review layout improvements */
+  .review-item {
+    flex-direction: row;
+  }
+  
+  .review-content {
+    margin-left: 12px;
+  }
+}
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) {
+  .rating-container {
+    padding: 60px;
+  }
+  
+  /* Better spacing for larger screens */
+  .review-spacing {
+    margin-bottom: 32px;
+  }
+  
+  /* Improved button layout */
+  .helpful-buttons {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+/* Extra large devices (1200px and up) */
+@media (min-width: 1200px) {
+  .rating-container {
+    padding: 80px;
+    max-width: 100%;
+  }
+  
+  /* Optimal reading width */
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Ultra-wide screens (1400px and up) */
+@media (min-width: 1400px) {
+  .rating-container {
+    padding: 100px;
+  }
+  
+  .content-wrapper {
+    max-width: 1400px;
+  }
+}
+
+/* Mobile-first responsive utilities */
+.flex-mobile-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .flex-mobile-column {
+    flex-direction: row;
+  }
+}
+
+/* Text responsive sizing */
+.responsive-title {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.2;
+}
+
+.responsive-heading {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1;
+}
+
+.responsive-subheading {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+/* Button responsive styling */
+.helpful-button {
+  font-size: 14px;
+  padding: 4px 12px;
+  border: 1px solid #bcbcbcff;
+  border-radius: 16px;
+  white-space: nowrap;
+  min-width: 60px;
+  text-align: center;
+}
+
+@media (max-width: 575px) {
+  .helpful-button {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Image responsive styling */
+.profile-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@media (max-width: 575px) {
+  .profile-image {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Rating stars responsive */
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star-icon {
+  font-size: 14px;
+}
+
+@media (max-width: 575px) {
+  .star-icon {
+    font-size: 12px;
+  }
+}
+
+/* Rating distribution bars */
+.rating-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.rating-bar {
+  flex: 1;
+  background-color: #dee2e6;
+  border-radius: 10px;
+  height: 8px;
+  position: relative;
+  min-width: 100px;
+}
+
+.rating-bar-fill {
+  height: 8px;
+  border-radius: 10px;
+  background-color: #01875f;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 575px) {
+  .rating-bar {
+    min-width: 80px;
+    height: 6px;
+  }
+  
+  .rating-bar-fill {
+    height: 6px;
+  }
+}
+
+/* Review response box */
+.response-box {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 575px) {
+  .response-box {
+    padding: 12px;
+    margin-top: 12px;
+  }
+}
+
+/* Text overflow handling */
+.text-truncate-mobile {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .text-truncate-mobile {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Spacing utilities */
+.gap-responsive {
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .gap-responsive {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .gap-responsive {
+    gap: 24px;
+  }
+}
+
+/* Flexbox utilities for better responsive control */
+.flex-wrap-mobile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-between-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Animation utilities */
+.smooth-transition {
+  transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Focus states for accessibility */
+.focusable:focus {
+  outline: 2px solid #01875f;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .rating-container {
+    padding: 20px;
+  }
+  
+  .helpful-button {
+    border: 1px solid #000;
+  }
+  
+  .response-box {
+    border: 1px solid #ccc;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .rating-bar-fill {
+    background-color: #000;
+  }
+  
+  .star-icon {
+    filter: contrast(2);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .smooth-transition,
+  .rating-bar-fill {
+    transition: none;
+  }
+  
+  .hover-scale:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .rating-container {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .response-box {
+    background-color: #2d2d2d;
+  }
+  
+  .helpful-button {
+    border-color: #555;
+    color: #ffffff;
+  }
+}

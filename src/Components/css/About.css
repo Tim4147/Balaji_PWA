@@ -1,0 +1,210 @@
+/* Fix for component overlapping issues */
+
+/* Ensure proper stacking and spacing */
+.rating-component,
+.about-component {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  clear: both;
+  box-sizing: border-box;
+}
+
+/* Main container fix */
+.main-app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Component wrapper to prevent overlap */
+.component-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+  padding: 16px 0;
+  clear: both;
+}
+
+/* Reset any problematic margins/padding */
+* {
+  box-sizing: border-box;
+}
+
+/* Responsive container base */
+.responsive-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+/* Mobile first responsive padding */
+.responsive-padding {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) {
+  .responsive-padding {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  
+  .component-wrapper {
+    margin-bottom: 32px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 992px) {
+  .responsive-padding {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .responsive-padding {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* Extra large desktop */
+@media (min-width: 1400px) {
+  .responsive-padding {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/* Fix flexbox issues on small screens */
+@media (max-width: 575px) {
+  .d-flex {
+    flex-wrap: wrap !important;
+  }
+  
+  .component-wrapper {
+    margin-bottom: 16px;
+    padding: 8px 0;
+  }
+  
+  /* Ensure text doesn't overflow */
+  .text-content {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Fix button spacing on mobile */
+  .btn-group-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .btn-group-mobile .btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+/* Very small screens (320px) */
+@media (max-width: 320px) {
+  .responsive-padding {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .component-wrapper {
+    margin-bottom: 12px;
+    padding: 4px 0;
+  }
+}
+
+/* Landscape mobile fix */
+@media (max-height: 500px) and (orientation: landscape) {
+  .component-wrapper {
+    margin-bottom: 12px;
+  }
+  
+  .modal-content {
+    max-height: 85vh;
+  }
+}
+
+/* Print styles */
+@media print {
+  .component-wrapper {
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+  
+  .modal-overlay {
+    display: none !important;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    /* Slightly increase touch targets on high DPI */
+ 
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .component-wrapper {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .modal-content {
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+}
+
+/* Focus states for keyboard navigation */
+.focusable:focus {
+  outline: 2px solid #01875f;
+  outline-offset: 2px;
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+  .responsive-container {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+}
+
+/* Fix for sticky elements */
+.sticky-fix {
+  position: relative;
+  z-index: 10;
+}
+
+/* Container query fallback */
+@container (max-width: 600px) {
+  .responsive-text {
+    font-size: 0.9rem;
+  }
+}
